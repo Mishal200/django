@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Students page
+{% endblock %}
+
+{% block content %}
+    <h1>Students page</h1>
+
+<!-- http://127.0.0.1:8000/students -->
+<!-- http://127.0.0.1:8000/ -->
+<!-- http://127.0.0.1:8000/about -->
+
+<a href="../">Home</a> <!-- http://127.0.0.1:8000/ -->
+<a href="../about">About</a> <!-- http://127.0.0.1:8000/about -->
+
+<!-- {{ student}}-->
+  <!-- {% for student in students %}
+   <h1>{{ student }}</h1>
+{% endfor %} -->
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Result</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.course }}</td>
+        <td>
+            {% if student.passed%}
+                Passed
+            {% else %}
+                Failed
+            {% endif %}
+        </td>    
+    </tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}
+    
+    

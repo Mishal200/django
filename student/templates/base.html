@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}My Website{% endblock %}</title>
+
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a> <!-- http://127.0.0.1:8000/ -->
+            <a href="{% url 'about' %}">About</a> <!-- http://127.0.0.1:8000/about -->
+            <a href="/students">Students</a> <!-- http://127.0.0.1:8000/students -->
+        </nav>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer>
+            owned by developer
+            </footer>
+       </body>
+
