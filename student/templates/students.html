@@ -11,15 +11,15 @@ Students page
 <!-- http://127.0.0.1:8000/ -->
 <!-- http://127.0.0.1:8000/about -->
 
-<a href="../">Home</a> <!-- http://127.0.0.1:8000/ -->
-<a href="../about">About</a> <!-- http://127.0.0.1:8000/about -->
+{% comment %} <a href="../">Home</a> <!-- http://127.0.0.1:8000/ --> {% endcomment %}
+{% comment %} <a href="../about">About</a> <!-- http://127.0.0.1:8000/about --> {% endcomment %}
 
 <!-- {{ student}}-->
   <!-- {% for student in students %}
    <h1>{{ student }}</h1>
 {% endfor %} -->
 
-<table>
+{% comment %} <table>
     <tr>
         <th>Name</th>
         <th>Course</th>
@@ -41,6 +41,13 @@ Students page
 {% endfor %}
 </table>
 
+{% endblock %} {% endcomment %}
+
+    <ul>
+        {% for student in students %}
+            <li><a href="../student/{{ student.roll_no }}/">{{ student.name }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}
     
     

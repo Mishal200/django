@@ -5,6 +5,13 @@ Home page
 {% endblock %}
 
 {% block content %}
-    <h1>Home page</h1>
-    
+<h1>Home page</h1>
+<form action= "/students" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Enter student name" id="">
+    <input type="text" name="course" placeholder="Enter student course" id="">
+    Result : <input type="radio" name="passed" value="passed" id=""> Passed <input type="radio" name="passed" value="failed" id=""> Failed
+    <input type="number" name="roll_no" placeholder="Enter roll number" id="">
+    <input type="submit" value="Add student">
+</form>
 {% endblock %}
